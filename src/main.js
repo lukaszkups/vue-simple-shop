@@ -5,6 +5,8 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+Vue.prototype.$api = 'http://localhost:3000/'
+
 new Vue({
   router,
   store,
