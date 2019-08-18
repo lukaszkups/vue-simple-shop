@@ -13,6 +13,11 @@ export default new Router({
       component: Home
     },
     {
+      path: '/product/:id',
+      name: 'product',
+      component: () => import(/* webpackChunkName: "about" */ '@/components/product/Product')
+    },
+    {
       path: '/about',
       name: 'about',
       component: () => import(/* webpackChunkName: "about" */ '@/components/pages/About')

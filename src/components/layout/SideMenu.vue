@@ -2,11 +2,15 @@
   <aside class='side-menu'>
     <div class='side-menu__subtitle'><i class="fal fa-address-book"></i><span>Contact</span></div>
     <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. </p>
-    <div class='side-menu__subtitle'><i class="fal fa-shopping-cart"></i><span>Cart</span></div>
+    <div class='side-menu__subtitle'>
+      <i class="fas fa-shopping-cart"></i>
+      <span>Cart</span>
+      <span v-if='cartItems && cartItems.length'>({{ cartItems.length }})</span>
+    </div>
     <ul class='cart-items-list'>
       <div v-if='cartItems && cartItems.length'>
         <li v-for='item in cartItems'
-          :key='item.uui'
+          :key='item.id'
         >
           <span class='accent-text'>{{ item.amount }}</span>
           <span class='ellipsis-text'>{{ item.name }}</span>
@@ -18,7 +22,12 @@
 </template>
 <script>
 export default {
-  name: 'SideMenu'
+  name: 'SideMenu',
+  computed: {
+    cartItems () {
+      return this.$store.state.cart.cartItems
+    }
+  }
 }
 </script>
 <style lang="sass">
@@ -28,6 +37,7 @@ export default {
   padding: 20px
 
   &__subtitle
+    display: block
     vertical-align: top
     line-height: $main-font-size + 10px
 
@@ -42,6 +52,9 @@ export default {
       font-size: $main-font-size + 10px
       display: inline-block
       margin-right: 20px
+
+  p + .side-menu__subtitle
+    margin-top: 50px
 
   .cart-items-list
     border: 2px dashed $white
