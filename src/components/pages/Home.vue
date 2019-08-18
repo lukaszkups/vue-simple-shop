@@ -13,7 +13,3 @@ export default {
   }
 }
 </script>
-<style lang="sass">
-.home-wrapper
-  background: $light-blue
-</style>

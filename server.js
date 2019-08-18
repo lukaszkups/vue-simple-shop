@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
 })
 
 app.get('/products', function (req, res) {
-  res.send(data)
+  res.send(data.map(obj => ({ name: obj.name, image: obj.image, description_short: obj.description_short })))
 })
 
 app.get('/products/:productId', function (req, res) {

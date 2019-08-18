@@ -26,10 +26,14 @@ export default {
 <style lang="sass">
 .main-app-wrapper
   display: flex
+  width: 100vw
+  overflow: hidden
 
   &--side-menu
     flex: 1
 
   &--router-view
     flex: 3
+    width: 100%
+    overflow: hidden
 </style>

@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/product/:id',
       name: 'product',
-      component: () => import(/* webpackChunkName: "about" */ '@/components/products/ProductsList')
+      component: () => import(/* webpackChunkName: "product" */ '@/components/products/ProductsListEntry')
     },
     {
       path: '/about',
@@ -25,7 +25,7 @@ export default new Router({
     {
       path: '/contact',
       name: 'contact',
-      component: () => import(/* webpackChunkName: "about" */ '@/components/pages/Contact')
+      component: () => import(/* webpackChunkName: "contact" */ '@/components/pages/Contact')
     }
   ]
 })

@@ -11,7 +11,7 @@
         <span>Vue shop</span>
       </router-link>
       <div class='top-menu__list--wrapper'>
-        <ui class='top-menu__list'>
+        <ul class='top-menu__list'>
           <router-link v-for='item in menuItems'
             :key='item.id'
             tag='li'
@@ -19,7 +19,7 @@
             @click.native='updateActiveMenuItem(item.id)'
             :to='{name: item.routeName}'
           >{{ item.label }}</router-link>
-        </ui>
+        </ul>
       </div>
     </div>
   </header>
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'UiHeader',
+  name: 'Header',
   computed: {
     menuItems () {
       return this.$store.state.topMenu.items
