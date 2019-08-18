@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/product/:id',
       name: 'product',
-      component: () => import(/* webpackChunkName: "about" */ '@/components/product/Product')
+      component: () => import(/* webpackChunkName: "about" */ '@/components/products/ProductsList')
     },
     {
       path: '/about',

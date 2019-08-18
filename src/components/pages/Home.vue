@@ -1,19 +1,15 @@
 <template>
   <div class='home-wrapper'>
-    <p>test</p>
+    <products-list></products-list>
   </div>
 </template>
 <script>
-import axios from 'axios'
+import ProductsList from '@/components/products/ProductsList'
 
 export default {
   name: 'Home',
-  created () {
-    axios.get(`${this.$api}items`).then(resp => {
-      console.warn(resp)
-    }).catch(err => {
-      throw new Error(err)
-    })
+  components: {
+    ProductsList
   }
 }
 </script>

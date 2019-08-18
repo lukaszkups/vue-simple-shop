@@ -11,14 +11,19 @@ const data = [
   { id: 6, name: 'Football PRO ball', available: true, price: 39.99, image: 'https://images.pexels.com/photos/39362/the-ball-stadion-football-the-pitch-39362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=12600', description_short: 'Football ball for a PRO.', description_long: 'Football ball for a PRO players. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non.' }
 ]
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/items', function (req, res) {
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next()
+})
+
+app.get('/products', function (req, res) {
   res.send(data)
 })
 
-app.get('/items/:itemId', function (req, res) {
+app.get('/products/:productId', function (req, res) {
   // eslint-disable-next-line no-undef
-  const item = data.find(obj => obj.id === itemId)
+  const item = data.find(obj => obj.id === productId)
   if (item) {
     res.send(item)
   } else {
