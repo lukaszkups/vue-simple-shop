@@ -9,7 +9,6 @@ import axios from 'axios'
 export default {
   name: 'Home',
   created () {
-    console.log(this.$auth)
     axios.get(`${this.$api}items`).then(resp => {
       console.warn(resp)
     }).catch(err => {

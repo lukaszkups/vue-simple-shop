@@ -1,23 +1,35 @@
 <template>
   <div id="app">
-    <i class="fas fa-shopping-bag"></i>
-    <side-menu></side-menu>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <ui-header></ui-header>
+    <div class='main-app-wrapper main-container'>
+      <div class='main-app-wrapper--side-menu'>
+        <side-menu></side-menu>
+      </div>
+      <div class='main-app-wrapper--router-view'>
+        <router-view/>
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
 <script>
+import UiHeader from '@/components/layout/Header'
 import SideMenu from '@/components/layout/SideMenu'
 
 export default {
   name: 'App',
   components: {
+    UiHeader,
     SideMenu
   }
 }
 </script>
-<style lang="scss">
+<style lang="sass">
+.main-app-wrapper
+  display: flex
+
+  &--side-menu
+    flex: 1
+
+  &--router-view
+    flex: 3
 </style>
