@@ -13,7 +13,7 @@ Run API server (REQUIRED TO RUN SPA CORRECTLY):
 npm run api-server
 ```
 
-Run front-end SPA:
+Run front-end SPA (in separate tab):
 ```
 npm run serve
 ```
