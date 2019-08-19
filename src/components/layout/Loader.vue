@@ -21,9 +21,9 @@ export default {
   z-index: 2
 
   .loader
-    color: #ffffff
+    color: $light-blue
     font-size: 20px
-    margin: 100px auto
+    margin: 0 auto
     width: 1em
     height: 1em
     border-radius: 50%
@@ -31,9 +31,8 @@ export default {
     text-indent: -9999em
     -webkit-animation: load4 1.3s infinite linear
     animation: load4 1.3s infinite linear
-    -webkit-transform: translateZ(0)
-    -ms-transform: translateZ(0)
-    transform: translateZ(0)
+    transform: translateY(-50%)
+    top: 50%
 
 @-webkit-keyframes load4
   0%,

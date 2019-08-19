@@ -13,3 +13,7 @@ export default {
   }
 }
 </script>
+<style lang="sass">
+.home-wrapper
+  margin-left: 20px
+</style>

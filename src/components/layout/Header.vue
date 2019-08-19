@@ -91,6 +91,9 @@ export default {
       margin: 0
       padding: 0 10px
 
+      &:last-of-type
+        padding-right: 0
+
       &:hover
         cursor: pointer
 

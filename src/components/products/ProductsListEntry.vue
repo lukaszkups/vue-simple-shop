@@ -1,6 +1,8 @@
 <template>
-  <li
+  <router-link
     class='products-list__item'
+    tag='li'
+    :to='{name: "productDetails", params: {productId: product.id}}'
   >
     <div
       class='products-list__item-image'
@@ -8,8 +10,7 @@
     ></div>
     <div class='products-list__item-title'>{{ product.name }}</div>
     <div class='products-list__item-description'>{{ product.description_short }}</div>
-
-  </li>
+  </router-link>
 </template>
 <script>
 export default {
@@ -22,7 +23,7 @@ export default {
   },
   computed: {
     computedProductImageStyle () {
-      return this.product && this.product.image ? {backgroundImage: `url(${this.product.image})`} : null
+      return this.product && this.product.image ? { backgroundImage: `url(${this.product.image})` } : null
     }
   }
 }

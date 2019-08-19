@@ -1,31 +1,42 @@
 <template>
   <aside class='side-menu'>
     <div class='side-menu__subtitle'><i class="fal fa-address-book"></i><span>Contact</span></div>
-    <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. </p>
+    <p class='side-menu__info'>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. </p>
     <div class='side-menu__subtitle'>
       <i class="fas fa-shopping-cart"></i>
       <span>Cart</span>
-      <span v-if='cartItems && cartItems.length'>({{ cartItems.length }})</span>
+      <span
+        v-if='cartItems && cartItems.length'
+        class='cart-items-amount'
+      >({{ totalCartItems }})</span>
     </div>
-    <ul class='cart-items-list'>
-      <div v-if='cartItems && cartItems.length'>
-        <li v-for='item in cartItems'
-          :key='item.id'
-        >
-          <span class='accent-text'>{{ item.amount }}</span>
-          <span class='ellipsis-text'>{{ item.name }}</span>
-        </li>
-      </div>
-      <li v-else class='centered-text cart-empty-label'>Cart is empty</li>
-    </ul>
+    <cart></cart>
+    <div
+      v-if='cartItems && cartItems.length'
+      class='total-cart-price'
+    >Total: {{ totalCartPrice }}</div>
   </aside>
 </template>
 <script>
+import Cart from '@/components/cart/Cart'
+
 export default {
   name: 'SideMenu',
+  components: {
+    Cart
+  },
   computed: {
     cartItems () {
       return this.$store.state.cart.cartItems
+    },
+    currency () {
+      return this.$store.state.cart.currency
+    },
+    totalCartItems () {
+      return this.$store.getters['cart/getTotalCartItemsAmount']
+    },
+    totalCartPrice () {
+      return `${this.$store.getters['cart/getTotalCartPrice']} ${this.currency}`
     }
   }
 }
@@ -35,6 +46,7 @@ export default {
   background: $light-blue
   color: $white
   padding: 20px
+  margin-top: 50px
 
   &__subtitle
     display: block
@@ -53,14 +65,17 @@ export default {
       display: inline-block
       margin-right: 20px
 
-  p + .side-menu__subtitle
+  &__info
+    line-height: 1.35em
+
+  &__info + .side-menu__subtitle
     margin-top: 50px
 
-  .cart-items-list
-    border: 2px dashed $white
-    padding: 10px
-    min-height: 150px
+  .cart-items-amount
+    margin-left: 5px
 
-    .cart-empty-label
-      line-height: 150px
+  .total-cart-price
+    font-weight: 900
+    text-align: right
+
 </style>
