@@ -21,11 +21,13 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
+      meta: { hasSideMenu: false },
       component: () => import(/* webpackChunkName: "about" */ '@/components/pages/About')
     },
     {
       path: '/contact',
       name: 'contact',
+      meta: { hasSideMenu: false },
       component: () => import(/* webpackChunkName: "contact" */ '@/components/pages/Contact')
     }
   ]

@@ -53,6 +53,7 @@ export default {
     font-weight: 900
     font-size: $main-font-size
     padding: 15px 15px 0 15px
+    line-height: 1.3em
 
   &-description
     color: $light-text

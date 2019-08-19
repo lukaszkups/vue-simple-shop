@@ -66,12 +66,13 @@ export default {
     display: block
     margin-top: 50px
     position: relative
-    overflow: hidden
     min-height: 50vh
     width: 100%
 
   &__items
     display: flex
     flex-wrap: wrap
-    margin-right: -15px
+    margin:
+      right: -15px
+      top: 0
 </style>

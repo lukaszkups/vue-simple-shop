@@ -2,7 +2,10 @@
   <div id="app">
     <ui-header></ui-header>
     <div class='main-app-wrapper main-container'>
-      <div class='main-app-wrapper--side-menu'>
+      <div
+        v-if='hasSideMenu'
+        class='main-app-wrapper--side-menu'
+      >
         <side-menu></side-menu>
       </div>
       <div class='main-app-wrapper--router-view'>
@@ -17,6 +20,11 @@ import SideMenu from '@/components/layout/SideMenu'
 
 export default {
   name: 'App',
+  computed: {
+    hasSideMenu () {
+      return this.$route && this.$route.meta && (this.$route.meta.hasSideMenu === true || this.$route.meta.hasSideMenu === false) ? this.$route.meta.hasSideMenu : true
+    }
+  },
   components: {
     UiHeader,
     SideMenu
@@ -31,6 +39,7 @@ export default {
 
   &--side-menu
     flex: 1
+    max-width: 25%
 
   &--router-view
     flex: 3

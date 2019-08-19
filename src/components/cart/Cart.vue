@@ -31,6 +31,9 @@ export default {
   border: 2px dashed $white
   padding: 10px
   min-height: 150px
+  overflow: hidden
+  position: relative
+  box-sizing: border-box
 
   .cart-empty-label
     line-height: 150px

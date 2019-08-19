@@ -1,0 +1,44 @@
+@media (max-width: 1070px)
+  #app
+    .main-container
+      width: 100%
+    .subpage__content
+      width: 80%
+
+@media (max-width: 880px)
+  #app
+    .products-list__item
+      min-width: calc(53% - 60px)
+      max-width: calc(53% - 60px)
+
+@media (max-width: 800px)
+  #app
+    .subpage
+      width: 90vw
+      margin-top: 5vh
+
+@media (max-width: 720px)
+  #app
+    .main-app-wrapper
+      flex-direction: column-reverse
+      &--side-menu
+        width: 100%
+        min-width: 100%
+      .products-list__items
+        margin-right: 0
+        padding-left: 0
+      .side-menu
+        &__subtitle:first-of-type,
+        &__info
+          display: none
+        .side-menu__info + .side-menu__subtitle
+          margin-top: 0
+
+
+@media (max-width: 540px)
+  #app
+    min-width: 450px
+    .subpage
+      width: 98%
+      &__content
+        width: 95%

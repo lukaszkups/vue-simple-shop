@@ -22,7 +22,7 @@ export default {
 
   .loader
     color: $light-blue
-    font-size: 20px
+    font-size: 10px
     margin: 0 auto
     width: 1em
     height: 1em
@@ -59,7 +59,6 @@ export default {
 
   87.5%
     box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em
-
 
 @keyframes load4
   0%,

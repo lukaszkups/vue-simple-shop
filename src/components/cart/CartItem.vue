@@ -1,7 +1,7 @@
 <template>
   <li class='cart-item'>
     <span class='accent-text cart-item__amount'>{{ item.amount }}</span>
-    <span class='ellipsis-text'>{{ item.name }}</span>
+    <span class='cart-item__name ellipsis-text'>{{ item.name }}</span>
     <span
       class='cart-item__remove-button'
       title='Remove item from cart'
@@ -28,6 +28,12 @@ export default {
   position: relative
   overflow: hidden
   margin-bottom: 5px
+
+  &__name
+    position: absolute
+    left: 21px
+    right: 5px
+    padding-right: 21px
 
   &__amount
     font-weight: 900

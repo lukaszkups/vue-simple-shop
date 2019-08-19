@@ -64,6 +64,7 @@ export default {
     font-family: $second-font
     padding-left: 10px
     font-size: 20px
+    min-width: 115px
 
     &:hover
       cursor: pointer
