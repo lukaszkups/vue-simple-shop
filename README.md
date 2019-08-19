@@ -1,8 +1,21 @@
 # vue-simple-shop
 
 ## Project setup
+
+Install dependencies:
+
 ```
 npm install
+```
+
+Run API server:
+```
+npm run api-server
+```
+
+Run front-end SPA:
+```
+npm run serve
 ```
 
 ### Example API server (required to work dev/production)
