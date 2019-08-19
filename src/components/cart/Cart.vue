@@ -22,8 +22,7 @@ export default {
     cartItems () {
       return this.$store.state.cart.cartItems
     }
-  },
-
+  }
 }
 </script>
 <style lang="sass">
