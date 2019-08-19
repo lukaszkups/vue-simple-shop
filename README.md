@@ -8,7 +8,7 @@ Install dependencies:
 npm install
 ```
 
-Run API server:
+Run API server (REQUIRED TO RUN SPA CORRECTLY):
 ```
 npm run api-server
 ```
