@@ -24,7 +24,7 @@ export default {
 .subpage
   background: $white
   color: $dark-text
-  margin: 20vh auto 10vh auto
+  margin: 10vh auto
   text-align: center
   box-sizing: border-box
   padding: 0 0 10px 0
